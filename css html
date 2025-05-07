@@ -1,0 +1,36 @@
+video { height: 100%; left: 0; object-fit: cover; position: absolute; top: 0; width: 100%; }
+.view-demo-pop-up { position: fixed; top: 0; left: 0; bottom: 0; width: 100%; height: 100%; z-index: 5555; background: rgb(0 0 0 / 75%); display: none; flex-flow: row wrap; overflow-y: auto; flex-flow: row wrap; display: flex; align-items: center; justify-content: center; display: none; } 
+.active-popup .view-demo-pop-up { display: flex; }
+.pop-cover { padding: 0 0 50%; position: relative; }
+button.pop-up-close { position: absolute; right: 0px; top: -30px; width: 20px; height: 20px; border: 0; background: none; background: url(../image/close-btn.svg); background-size: cover; cursor: pointer; }
+.active-popup { overflow: hidden; }
+.video-home { max-width: 1098px; width: 90%; padding: 50px 0; }
+
+
+ <div class="View-Demo">
+                            <a href="#">View Demo</a>
+                            <div class="view-demo-pop-up">
+                                <div class="video-home">
+                                    <div class="pop-cover">
+                                        <button class="pop-up-close"></button>
+                                        <video controls="">
+                                            <source src="./image/home-video.mp4" type="video/mp4">
+                                            <source src="./image/home-video.mp4" type="video/ogg">
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+$(document).ready(function () {
+    $(".View-Demo > a, .pop-up-close").click(function (e) {
+      e.preventDefault();
+      $("body").toggleClass('active-popup');
+    });
+  
+ 
+  });
+  
+
